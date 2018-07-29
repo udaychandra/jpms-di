@@ -1,0 +1,29 @@
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.9'
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath "gradle.plugin.org.gradle.java:experimental-jigsaw:0.1.1"
+    }
+}
+
+subprojects {
+    group "ud.jpms"
+    version "0.1.0-SNAPSHOT"
+
+    apply plugin: "java-library"
+    apply plugin: "org.gradle.java.experimental-jigsaw"
+
+    sourceCompatibility = "11"
+
+    repositories {
+        mavenCentral()
+    }
+}

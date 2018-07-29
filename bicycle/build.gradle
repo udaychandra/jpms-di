@@ -1,0 +1,5 @@
+javaModule.name = "ud.jpms.bicycle"
+
+dependencies {
+    api project(":core")
+}
